@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Dagmawi Yoseph — A Builder's Record</title>
+<meta name="description" content="The living CV of Dagmawi Yoseph — Top Rated freelance WordPress & Elementor developer. Case studies, practice notes, and proof of work.">
+<meta name="author" content="Dagmawi Yoseph">
+<meta name="theme-color" content="#f6f3ec">
+<meta property="og:title" content="Dagmawi Yoseph — A Builder's Record">
+<meta property="og:description" content="Part portfolio, part career narrative, part case-study archive.">
+<meta property="og:image" content="https://dagm.dev/img/me.jpg">
+<link rel="icon" href="https://dagm.dev/favicon-32.png">
+<style>
+/* ==========================================================================
+   DAGMAWI YOSEPH — A BUILDER'S RECORD
+   An editorial continuation of dagm.dev: same paper, same ink,
+   a longer story. No frameworks. No dependencies. Pure HTML/CSS/JS.
+   ========================================================================== */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  /* paper & ink — evolved from dagm.dev's light theme */
+  --paper:#f6f3ec;
+  --paper-2:#efeadf;
+  --plate:#fffdf7;
+  --ink:#171610;
+  --ink-2:#514e44;
+  --ink-3:#8d897a;
+  --hair:#ddd8ca;
+  --hair-2:#e9e5d9;
+  --ember:#b4531c;          /* single editorial accent */
+  --ember-soft:rgba(180,83,28,.08);
+  --dot-r:#ff5f57;--dot-y:#febc2e;--dot-g:#28c840;
+
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+
+  --w:1140px;
+  --gut:clamp(20px,5vw,72px);
+}
+
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--ember);color:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* faint warm atmosphere */
+.atmo{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(60vmax 45vmax at 85% -10%,rgba(180,83,28,.05),transparent 60%),
+    radial-gradient(50vmax 40vmax at -10% 65%,rgba(120,110,70,.06),transparent 60%);
+}
+.wrap{position:relative;z-index:1;max-width:var(--w);margin:0 auto;padding:0 var(--gut)}
+
+/* ---------- micro-language (dagm.dev DNA) ---------- */
+.kick{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.kick b{color:var(--ember);font-weight:600}
+.rule{height:1px;background:var(--hair);border:0}
+
+/* ---------- progress hairline ---------- */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--ember);z-index:100;transition:width .1s linear}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:90;
+  background:rgba(246,243,236,.82);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--hair-2);
+}
+.hdr{display:flex;align-items:center;gap:18px;max-width:var(--w);margin:0 auto;padding:14px var(--gut)}
+.brand{font-weight:900;letter-spacing:-.04em;font-size:1.05rem;text-decoration:none}
+.brand i{font-style:normal;color:var(--ember)}
+.hdr-tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);border-left:1px solid var(--hair);padding-left:16px}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:16px}
+.avail{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.avail::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--dot-g);box-shadow:0 0 0 0 rgba(40,200,64,.45);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(40,200,64,0)}100%{box-shadow:0 0 0 0 rgba(40,200,64,0)}}
+.hdr .cta{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--paper);background:var(--ink);padding:8px 14px;border-radius:999px}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(64px,12vh,140px) 0 clamp(40px,7vh,80px)}
+.hero .kick{display:block;margin-bottom:26px}
+.hero h1{
+  font-size:clamp(3rem,11vw,7.2rem);
+  font-weight:900;letter-spacing:-.045em;line-height:.94;
+  margin-bottom:26px;
+}
+.hero h1 .ln2{display:block;color:var(--ink);}
+.hero h1 .ln2 em{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.02em;color:var(--ember)}
+.hero-sub{
+  font-family:var(--serif);font-size:clamp(1.15rem,2.6vw,1.5rem);font-style:italic;
+  color:var(--ink-2);max-width:34ch;line-height:1.5;margin-bottom:40px;
+}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:end}
+.hero-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px;max-width:560px}
+.hm{border-top:1px solid var(--hair);padding-top:12px}
+.hm .kick{display:block;margin-bottom:5px}
+.hm a{text-decoration:none;font-size:.92rem;font-weight:600}
+.hm a:hover{color:var(--ember)}
+.hm span{font-size:.92rem;font-weight:600}
+
+/* portrait plate */
+.plate{background:var(--plate);border:1px solid var(--hair);border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(23,22,16,.25)}
+.plate-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--hair-2)}
+.dot{width:10px;height:10px;border-radius:50%}
+.dot.r{background:var(--dot-r)}.dot.y{background:var(--dot-y)}.dot.g{background:var(--dot-g)}
+.plate-file{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);margin-left:6px}
+.portrait{position:relative;overflow:hidden}
+.portrait img{width:100%;height:auto;max-height:78vh;object-fit:cover;object-position:center top}
+.plate-cap{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- role ribbon ---------- */
+.ribbon{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:18px 0;margin:clamp(30px,6vh,60px) 0 0}
+.ribbon-track{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px}
+.ribbon span{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.ribbon b{color:var(--ember);font-weight:400}
+
+/* ---------- sections ---------- */
+section{padding:clamp(72px,13vh,150px) 0 0}
+.sec-mark{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(30px,5vh,54px)}
+.sec-mark .kick{flex:none}
+.sec-mark .rule{flex:1}
+h2.display{font-size:clamp(2rem,6vw,3.6rem);font-weight:900;letter-spacing:-.04em;line-height:1.02;margin-bottom:26px}
+h2.display em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--ember)}
+.lede{font-family:var(--serif);font-size:clamp(1.08rem,2.2vw,1.35rem);line-height:1.65;color:var(--ink-2);max-width:62ch}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* about */
+.about-cols{display:grid;grid-template-columns:1fr;gap:44px;margin-top:10px}
+.about-body p{max-width:64ch;color:var(--ink-2);margin-bottom:18px}
+.about-body p:first-of-type::first-letter{
+  font-family:var(--serif);font-size:3.4em;font-weight:600;float:left;
+  line-height:.85;padding:4px 10px 0 0;color:var(--ember);
+}
+.about-body strong{color:var(--ink);font-weight:650}
+.vitals{border-top:2px solid var(--ink);padding-top:20px;height:max-content}
+.vitals dl{display:grid;gap:14px}
+.vitals dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.vitals dd{font-weight:650;font-size:.95rem;margin-bottom:4px}
+
+/* philosophy */
+.tenets{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--hair)}
+.tenet{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:34px 0;border-bottom:1px solid var(--hair)}
+.tenet .num{font-family:var(--mono);font-size:.8rem;color:var(--ember);padding-top:8px}
+.tenet h3{font-size:clamp(1.3rem,3.4vw,1.9rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+.tenet p{color:var(--ink-2);max-width:58ch}
+
+/* capabilities */
+.caps{display:grid;grid-template-columns:1fr;border-top:1px solid var(--hair)}
+.cap{display:grid;grid-template-columns:1fr;gap:8px;padding:30px 0;border-bottom:1px solid var(--hair)}
+.cap h3{font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
+.cap h3 small{font-family:var(--mono);font-size:.62rem;font-weight:500;letter-spacing:.14em;color:var(--ink-3);display:block;margin-bottom:6px;text-transform:uppercase}
+.cap p{color:var(--ink-2);max-width:60ch}
+.cap .list{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);line-height:2;letter-spacing:.02em}
+
+/* ---------- case studies ---------- */
+.case{margin-bottom:clamp(64px,11vh,120px)}
+.case-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin-bottom:20px}
+.case-head .num{font-family:var(--mono);font-size:.78rem;color:var(--ember)}
+.case-head h3{font-size:clamp(1.7rem,5vw,2.7rem);font-weight:900;letter-spacing:-.035em;line-height:1.05}
+.case-head .visit{margin-left:auto;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink-2);border:1px solid var(--hair);border-radius:999px;padding:7px 14px;white-space:nowrap}
+.case-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:16px 0;margin-bottom:26px}
+.case-facts div{min-width:0}
+.case-facts .kick{display:block;margin-bottom:3px}
+.case-facts p{font-size:.86rem;font-weight:600;line-height:1.5}
+.case-story{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:26px}
+.beat h4{font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ember);margin-bottom:8px}
+.beat p{color:var(--ink-2);font-size:.97rem;max-width:66ch}
+.lesson{font-family:var(--serif);font-style:italic;font-size:1.08rem;color:var(--ink-2);border-left:2px solid var(--ember);padding:6px 0 6px 20px;max-width:56ch;margin-top:4px}
+
+/* screenshot plates */
+.screenshot-wrapper{margin:26px 0;border-radius:14px;overflow:hidden;border:1px solid var(--hair);background:var(--plate);box-shadow:0 34px 70px -36px rgba(23,22,16,.3)}
+.shot-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--hair-2);background:var(--plate)}
+.shot-url{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);margin-left:8px;background:var(--paper);border:1px solid var(--hair-2);padding:3px 12px;border-radius:6px}
+.shot-frame{position:relative;aspect-ratio:16/9.4;overflow:hidden;background:var(--paper-2)}
+.shot-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:2}
+.shot-fallback{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  background:
+    radial-gradient(80% 110% at 15% 0%,var(--ember-soft),transparent 55%),
+    linear-gradient(165deg,#f2eee3,#e9e4d6)}
+.shot-fallback b{font-size:clamp(1.6rem,5vw,2.6rem);font-weight:900;letter-spacing:-.04em;color:rgba(23,22,16,.14)}
+.shot-fallback span{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- more work grid ---------- */
+.more-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.mini{background:var(--plate);border:1px solid var(--hair);border-radius:14px;padding:24px;transition:transform .3s,box-shadow .3s;position:relative}
+.mini:hover{transform:translateY(-3px);box-shadow:0 24px 50px -30px rgba(23,22,16,.3)}
+.mini .kick{display:block;margin-bottom:10px}
+.mini h3{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.mini p{font-size:.9rem;color:var(--ink-2);margin-bottom:14px}
+.plainlink{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--ember)}
+
+/* ---------- timeline ---------- */
+.tl{border-left:1px solid var(--hair);margin-left:6px;padding-left:34px;display:grid;gap:38px;position:relative}
+.tl-item{position:relative}
+.tl-item::before{content:"";position:absolute;left:-40px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2.5px solid var(--ember)}
+.tl-item .kick{display:block;margin-bottom:6px}
+.tl-item h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.tl-item p{color:var(--ink-2);max-width:60ch;font-size:.95rem}
+
+/* ---------- process ---------- */
+.steps{counter-reset:step;display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--hair)}
+.step{counter-increment:step;padding:26px 0;border-bottom:1px solid var(--hair);display:grid;grid-template-columns:64px 1fr;gap:18px}
+.step::before{content:"0" counter(step);font-family:var(--mono);font-size:.8rem;color:var(--ink-3);padding-top:5px}
+.step h3{font-size:1.15rem;font-weight:800;margin-bottom:6px;letter-spacing:-.02em}
+.step p{color:var(--ink-2);max-width:60ch;font-size:.95rem}
+
+/* ---------- signals ---------- */
+.signals{display:grid;grid-template-columns:1fr;gap:14px}
+.signal{background:var(--plate);border:1px solid var(--hair);border-radius:14px;padding:26px}
+.signal b{display:block;font-size:1.5rem;font-weight:900;letter-spacing:-.03em;margin-bottom:6px}
+.signal p{font-size:.9rem;color:var(--ink-2)}
+
+/* ---------- toolbox ---------- */
+.tools-cols{display:grid;grid-template-columns:1fr;gap:26px}
+.tool-col{border-top:2px solid var(--ink);padding-top:16px}
+.tool-col .kick{display:block;margin-bottom:12px}
+.tool-col p{font-size:.92rem;line-height:2;color:var(--ink-2)}
+.tool-col p b{color:var(--ink);font-weight:650}
+
+/* ---------- offclock ---------- */
+.off-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.off{border:1px solid var(--hair);border-radius:14px;padding:24px;background:var(--plate)}
+.off h3{font-size:1.05rem;font-weight:800;margin-bottom:8px}
+.off p{font-size:.9rem;color:var(--ink-2);margin-bottom:12px}
+
+/* ---------- education ---------- */
+.edu{border:1px solid var(--hair);border-radius:14px;background:var(--plate);padding:clamp(24px,4vw,40px)}
+.edu p{color:var(--ink-2);max-width:62ch;margin:8px 0 18px}
+.edu-list{display:flex;flex-wrap:wrap;gap:8px}
+.edu-list span{font-family:var(--mono);font-size:.68rem;border:1px solid var(--hair);border-radius:999px;padding:6px 13px;color:var(--ink-2);background:var(--paper)}
+
+/* ---------- now ---------- */
+.now{border-left:2px solid var(--ember);padding-left:22px}
+.now p{color:var(--ink-2);max-width:62ch;margin-bottom:12px}
+.now p strong{color:var(--ink)}
+
+/* ---------- contact ---------- */
+.contact{padding-bottom:clamp(40px,8vh,80px)}
+.contact-inner{text-align:left}
+.contact h2{font-size:clamp(2.6rem,9vw,5.6rem);font-weight:900;letter-spacing:-.045em;line-height:.98;margin-bottom:22px}
+.contact h2 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--ember)}
+.contact .lede{margin-bottom:36px}
+.contact-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.big-link{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;padding:15px 26px;border-radius:999px;word-break:break-all}
+.big-link.solid{background:var(--ink);color:var(--paper)}
+.big-link.line{border:1.5px solid var(--ink)}
+.contact-meta{display:flex;flex-wrap:wrap;gap:14px 20px;font-family:var(--mono);font-size:.7rem;color:var(--ink-2);letter-spacing:.06em}
+.contact-meta span{word-break:break-all}
+
+footer{border-top:1px solid var(--hair);padding:26px 0 40px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--ink-3)}
+footer b{color:var(--ember);font-weight:400}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ribbon-track{animation:none}
+  .avail::before{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- responsive ---------- */
+@media(min-width:720px){
+  .hero-grid{grid-template-columns:1.2fr .8fr;gap:56px}
+  .about-cols{grid-template-columns:1.5fr .8fr}
+  .cap{grid-template-columns:220px 1fr 200px;gap:30px;align-items:start}
+  .case-facts{grid-template-columns:repeat(4,1fr)}
+  .case-story{grid-template-columns:repeat(2,1fr);gap:30px 44px}
+  .more-grid{grid-template-columns:repeat(2,1fr)}
+  .signals{grid-template-columns:repeat(3,1fr)}
+  .tools-cols{grid-template-columns:repeat(3,1fr)}
+  .off-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1000px){
+  .more-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:719px){
+  .hdr-tag{display:none}
+  .plate{max-width:420px}
+  .hero h1{word-break:keep-all}
+}
+
+/* ==========================================================================
+   PRINT — clean PDF from iOS Safari or desktop
+   ========================================================================== */
+@media print{
+  @page{margin:13mm 12mm}
+  html{scroll-behavior:auto}
+  body{font-size:10.5px;line-height:1.55;background:#fff;color:#111}
+  .atmo,.progress,.ribbon{display:none !important}
+  .big-link{padding:8px 16px;font-size:.8rem}
+  header{position:static;background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .rv{opacity:1 !important;transform:none !important}
+  section{padding:18px 0 0}
+  .hero{padding:8px 0}
+  .hero h1{font-size:2.6rem}
+  .hero-grid{grid-template-columns:1.3fr .7fr;gap:20px}
+  .plate,.screenshot-wrapper,.mini,.signal,.edu,.off{box-shadow:none;border:1.2px solid #c8c4b8}
+  .portrait img{aspect-ratio:auto;max-height:200px;transform:none}
+  .case{break-inside:avoid;page-break-inside:avoid;margin-bottom:26px}
+  .shot-frame{aspect-ratio:16/6.5}
+  .tenet,.step,.cap{padding:14px 0}
+  .tl{gap:18px}
+  .case-story{grid-template-columns:1fr 1fr;gap:12px 20px}
+  .contact h2{font-size:2rem}
+  a{text-decoration:none;color:#111}
+  .contact-meta{font-size:.62rem}
+}
+</style>
+</head>
+<body>
+
+<div class="atmo" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="hdr">
+    <span class="brand">DAGM<i>.</i>Y</span>
+    <span class="hdr-tag">A Builder's Record — Live CV</span>
+    <div class="hdr-right">
+      <span class="avail">Available</span>
+      <span class="cta">Dagmawi.yoseph@icloud.com</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-label="Introduction" style="padding-top:clamp(56px,10vh,120px)">
+    <span class="kick rv"><b>Addis Ababa, Ethiopia</b> · Freelance · Est. record 2022 → present</span>
+    <div class="hero-grid">
+      <div>
+        <h1 class="rv">Dagmawi<span class="ln2">Yoseph's <em>builds</em></span></h1>
+        <p class="hero-sub rv">Websites that load fast, read well, and quietly make money for the businesses behind them.</p>
+        <div class="hero-meta rv">
+          <div class="hm"><span class="kick">Practice</span><span>WordPress · Elementor · WooCommerce</span></div>
+          <div class="hm"><span class="kick">Standing</span><span>Top Rated on Upwork</span></div>
+          <div class="hm"><span class="kick">Portfolio</span><span>dagm.dev</span></div>
+          <div class="hm"><span class="kick">Write</span><span>Dagmawi.yoseph@icloud.com</span></div>
+        </div>
+      </div>
+      <figure class="plate rv">
+        <div class="plate-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="plate-file">portrait.jpg</span></div>
+        <div class="portrait">
+          <!-- Live asset from dagm.dev — swap src to a local ./assets/ file any time -->
+          <img src="https://dagm.dev/img/me.jpg" alt="Portrait of Dagmawi Yoseph" width="600" height="690" loading="eager">
+        </div>
+        <figcaption class="plate-cap"><span>Dagmawi Yoseph</span><span>fig. 01 — the builder</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>WordPress Developer <b>✳</b></span><span>Elementor Designer <b>✳</b></span><span>WooCommerce Expert <b>✳</b></span><span>Speed Optimization <b>✳</b></span><span>Migration Expert <b>✳</b></span><span>Workflow Automation <b>✳</b></span><span>Landing Pages</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" aria-label="About">
+    <div class="sec-mark rv"><span class="kick">01 — The short version</span><hr class="rule"></div>
+    <h2 class="display rv">Three years and only<br><em>one semi-unhappy client.</em></h2>
+    <div class="about-cols">
+      <div class="about-body rv">
+        <p>I'm a freelance WordPress and Elementor Pro developer working from Addis Ababa with clients across the United States and Europe. The work spans <strong>full site builds, WooCommerce stores, performance rescues, and operational automation</strong> — the kind of engagements where a business hands you a problem, not a spec.</p>
+        <p>What clients keep coming back for is a simple pattern: sites that <strong>load in under three seconds</strong>, landing pages that have <strong>lifted conversion rates by up to 40%</strong>, and handoffs clean enough that the client can run their own site afterward. Most of my relationships are long-term — the bookshop I built in 2024 still calls me first, and the nonprofit I rescued is an ongoing engagement.</p>
+        <p>I work AI-accelerated. My daily practice is built around <strong>Claude Code and custom skills I've written myself</strong> — proposal engines, deployment pipelines, image tooling. This is not a buzzword on this page; my own portfolio runs on a Git-based CMS I designed where the admin panel commits JSON straight to GitHub. I build my own tools, then I use them to build yours faster.</p>
+      </div>
+      <aside class="vitals rv" aria-label="Vitals">
+        <dl>
+          <div><dt>Name</dt><dd>Dagmawi Yoseph</dd></div>
+          <div><dt>Base</dt><dd>Addis Ababa, Ethiopia — works worldwide</dd></div>
+          <div><dt>Focus</dt><dd>WordPress · WooCommerce · Automation</dd></div>
+          <div><dt>Standing</dt><dd>Top Rated freelancer, Upwork</dd></div>
+          <div><dt>Status</dt><dd>Available for freelance work</dd></div>
+          <div><dt>Phone</dt><dd>+251 911 129 513</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= PHILOSOPHY ================= -->
+  <section id="philosophy" aria-label="Philosophy">
+    <div class="sec-mark rv"><span class="kick">02 — What I believe</span><hr class="rule"></div>
+    <div class="tenets">
+      <div class="tenet rv">
+        <span class="num">№1</span>
+        <div>
+          <h3>Fast is a feature.</h3>
+          <p>Every second of load time costs somebody a sale. I treat Core Web Vitals as a design constraint, not a post-launch chore — image budgets, lean plugin stacks, and caching decided before the first section is built.</p>
+        </div>
+      </div>
+      <div class="tenet rv">
+        <span class="num">№2</span>
+        <div>
+          <h3>Converting beats impressing.</h3>
+          <p>A website is an employee. It should answer the visitor's question, remove their doubt, and ask for the inquiry. Beautiful is table stakes; the layouts I build are sequenced around one job — the next click.</p>
+        </div>
+      </div>
+      <div class="tenet rv">
+        <span class="num">№3</span>
+        <div>
+          <h3>Hand the keys back.</h3>
+          <p>A build that only its developer can maintain is a liability with good typography. I structure every project so the owner can update content, products, and pages without me — then they hire me back for the work that matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAPABILITIES ================= -->
+  <section id="capabilities" aria-label="Capabilities">
+    <div class="sec-mark rv"><span class="kick">03 — Capabilities</span><hr class="rule"></div>
+    <h2 class="display rv">Four ways I'm useful.</h2>
+    <div class="caps">
+      <div class="cap rv">
+        <h3><small>Build</small>WordPress, end to end</h3>
+        <p>Custom themes and child themes, plugin development, Elementor Pro builds that stay pixel-faithful to the design, multilingual and membership setups, migrations from anywhere to anywhere.</p>
+        <div class="list">WordPress · Elementor Pro · PHP · Divi · Avada · Gutenberg · Genesis · WPML-class multilingual</div>
+      </div>
+      <div class="cap rv">
+        <h3><small>Sell</small>Commerce that closes</h3>
+        <p>WooCommerce stores with secure checkout, payment gateways, custom product interfaces, and bulk catalog operations — the import/export plumbing most developers avoid.</p>
+        <div class="list">WooCommerce · Payment Gateways · Product Data Ops · Custom Product UI · Donation Flows</div>
+      </div>
+      <div class="cap rv">
+        <h3><small>Tune</small>Performance &amp; search</h3>
+        <p>Speed rescues, Core Web Vitals remediation, structured data, and analytics wiring — so the site is fast, and you can prove it's working.</p>
+        <div class="list">Core Web Vitals · Caching · WebP pipelines · JSON-LD Schema · GA4 · Search Console · On-page SEO</div>
+      </div>
+      <div class="cap rv">
+        <h3><small>Automate</small>Operations tooling</h3>
+        <p>Custom receipt templates, shipping-label automation, Git-based content systems, AI-assisted development workflows. The invisible work that gives owners their afternoons back.</p>
+        <div class="list">Git / GitHub · Vercel · Claude Code + custom AI skills · Internal tools · Workflow design</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SELECTED WORK ================= -->
+  <section id="work" aria-label="Selected work">
+    <div class="sec-mark rv"><span class="kick">04 — Selected work</span><hr class="rule"></div>
+    <h2 class="display rv">Case studies <em>and screenshots.</em></h2>
+    <p class="lede rv" style="margin-bottom:clamp(40px,7vh,70px)">Four engagements that show the range: a platform built from nothing, a store that sells every day, a rescue under live traffic, and the operations work nobody sees.</p>
+
+    <!-- CASE 1: ARCH INTERNATIONAL -->
+    <article class="case rv">
+      <div class="case-head">
+        <span class="num">Case 01</span>
+        <h3>The Arch International</h3>
+        <span class="visit">thearchinternational.com</span>
+      </div>
+      <div class="case-facts">
+        <div><span class="kick">Role</span><p>Sole designer &amp; developer</p></div>
+        <div><span class="kick">Year</span><p>2025</p></div>
+        <div><span class="kick">Stack</span><p>WordPress · Elementor Pro</p></div>
+        <div><span class="kick">Type</span><p>Full platform build</p></div>
+      </div>
+      <div class="screenshot-wrapper">
+        <div class="shot-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="shot-url">thearchinternational.com</span></div>
+        <div class="shot-frame">
+          <div class="shot-fallback"><b>THE ARCH INTERNATIONAL</b><span>assets/arch.png</span></div>
+          <img src="assets/arch.png" alt="The Arch International website" loading="lazy" onerror="this.remove()">
+        </div>
+      </div>
+      <div class="case-story">
+        <div class="beat"><h4>Challenge</h4><p>An international organization needed its entire digital presence built from zero — no existing site to lean on, no design system, no content structure. Everything from information architecture to launch was on one pair of hands.</p></div>
+        <div class="beat"><h4>Thinking</h4><p>Organizations like this live or die on clarity: a first-time visitor has to understand the mission, find the program they care about, and know how to act within one scroll. I architected the sitemap around those three motions before opening a page builder.</p></div>
+        <div class="beat"><h4>Build</h4><p>Custom WordPress build with a consistent template system in Elementor Pro — global styles, reusable section patterns, mobile-first breakpoints. Performance was treated as a launch requirement, not an optimization phase.</p></div>
+        <div class="beat"><h4>Outcome</h4><p>Shipped in 2025 and running since. The organization's team updates programs and pages themselves; I stay on for structural work — the handoff pattern working exactly as designed.</p></div>
+      </div>
+      <p class="lesson">Lesson kept: the sitemap is the product. Everything after it is execution.</p>
+    </article>
+
+    <!-- CASE 2: ROSE BOOKSHOP -->
+    <article class="case rv">
+      <div class="case-head">
+        <span class="num">Case 02</span>
+        <h3>Rose Bookshop</h3>
+        <span class="visit">rosebookshop.com</span>
+      </div>
+      <div class="case-facts">
+        <div><span class="kick">Role</span><p>Developer, ongoing</p></div>
+        <div><span class="kick">Year</span><p>2024 → present</p></div>
+        <div><span class="kick">Stack</span><p>WooCommerce · Elementor · custom plugin</p></div>
+        <div><span class="kick">Type</span><p>E-commerce</p></div>
+      </div>
+      <div class="screenshot-wrapper">
+        <div class="shot-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="shot-url">rosebookshop.com</span></div>
+        <div class="shot-frame">
+          <div class="shot-fallback"><b>ROSE BOOKSHOP</b><span>assets/rose.png</span></div>
+          <img src="assets/rose.png" alt="Rose Bookshop online store" loading="lazy" onerror="this.remove()">
+        </div>
+      </div>
+      <div class="case-story">
+        <div class="beat"><h4>Challenge</h4><p>An independent bookshop needed a real store, not a brochure — full catalog, secure checkout, payment gateways, and browsing that feels closer to shelf-wandering than database-querying.</p></div>
+        <div class="beat"><h4>Thinking</h4><p>Book buyers browse in bursts. Forcing a full page load for every title kills the wandering instinct that sells books, so the catalog needed a way to peek at a book without leaving the shelf.</p></div>
+        <div class="beat"><h4>Build</h4><p>WooCommerce store built with Elementor Pro, plus a custom product popup plugin written for exactly that browsing problem — tap a cover, preview the book in place, keep scrolling. Secure checkout and gateway configuration behind it.</p></div>
+        <div class="beat"><h4>Outcome</h4><p>Selling since 2024, with an ongoing maintenance relationship covering product updates and storefront changes. When they need something, they don't post a job — they message me.</p></div>
+      </div>
+      <p class="lesson">Lesson kept: when the off-the-shelf widget doesn't exist, a small custom plugin beats a big compromise.</p>
+    </article>
+
+    <!-- CASE 3: JB DONDOLO -->
+    <article class="case rv">
+      <div class="case-head">
+        <span class="num">Case 03</span>
+        <h3>JB Dondolo</h3>
+        <span class="visit">jbdondolo.org</span>
+      </div>
+      <div class="case-facts">
+        <div><span class="kick">Role</span><p>Rescue developer, ongoing</p></div>
+        <div><span class="kick">Year</span><p>Ongoing</p></div>
+        <div><span class="kick">Stack</span><p>WordPress · Avada · Divi</p></div>
+        <div><span class="kick">Type</span><p>Nonprofit rescue &amp; care</p></div>
+      </div>
+      <div class="screenshot-wrapper">
+        <div class="shot-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="shot-url">jbdondolo.org</span></div>
+        <div class="shot-frame">
+          <div class="shot-fallback"><b>JB DONDOLO</b><span>assets/jbdondolo.png</span></div>
+          <img src="assets/jbdondolo.png" alt="JB Dondolo nonprofit website" loading="lazy" onerror="this.remove()">
+        </div>
+      </div>
+      <div class="case-story">
+        <div class="beat"><h4>Challenge</h4><p>A live nonprofit site running Avada and Divi builders side by side — a setup that guarantees conflicts — with plugin clashes breaking layouts while real donors were trying to give.</p></div>
+        <div class="beat"><h4>Thinking</h4><p>On a rescue, the instinct to rebuild everything is usually wrong. A nonprofit can't afford downtime or a redesign bill; it needs the bleeding stopped in the right order, with the donation flow protected above all else.</p></div>
+        <div class="beat"><h4>Build</h4><p>Systematic conflict isolation — reproduce, bisect plugins, identify the cross-builder collisions — then a stabilization pass: pruning the stack, resolving the conflicts, and hardening what remained.</p></div>
+        <div class="beat"><h4>Outcome</h4><p>The site is stable and the donation flow reliable. The engagement never ended — I remain their developer for performance, updates, and new sections.</p></div>
+      </div>
+      <p class="lesson">Lesson kept: rescues are triage, not surgery. Fix in the order the business bleeds.</p>
+    </article>
+
+    <!-- CASE 4: HERON DANCE & ZEN MOUNTAIN -->
+    <article class="case rv">
+      <div class="case-head">
+        <span class="num">Case 04</span>
+        <h3>Heron Dance &amp; Zen Mountain Art Studio</h3>
+        <span class="visit">herondance.org · zenmountainjournal</span>
+      </div>
+      <div class="case-facts">
+        <div><span class="kick">Role</span><p>Store operations &amp; analytics</p></div>
+        <div><span class="kick">Year</span><p>2026 → present</p></div>
+        <div><span class="kick">Stack</span><p>WooCommerce · GA4 · Search Console</p></div>
+        <div><span class="kick">Type</span><p>Two-studio operations</p></div>
+      </div>
+      <div class="screenshot-wrapper">
+        <div class="shot-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="shot-url">zen mountain journal — heron dance art studio</span></div>
+        <div class="shot-frame">
+          <div class="shot-fallback"><b>ZEN MOUNTAIN JOURNAL</b><span>assets/zen.png</span></div>
+          <img src="assets/zen.png" alt="Zen Mountain Journal website by Heron Dance Art Studio" loading="lazy" onerror="this.remove()">
+        </div>
+      </div>
+      <div class="case-story">
+        <div class="beat"><h4>Challenge</h4><p>Two sister art studios with catalogs that needed constant tending — bulk product imports and exports, listing hygiene, and no analytics to speak of. The owners' time was disappearing into admin work.</p></div>
+        <div class="beat"><h4>Thinking</h4><p>The valuable thing here isn't any single task — it's turning recurring chaos into repeatable process. Every operational job should end with a workflow the next occurrence can reuse.</p></div>
+        <div class="beat"><h4>Build</h4><p>Structured import/export routines for catalog operations across both studios, GA4 and Google Search Console integrated and verified, and working procedures for the recurring tasks.</p></div>
+        <div class="beat"><h4>Outcome</h4><p>The studios can see their search traffic and buyer behavior for the first time, and catalog jobs that took afternoons now take minutes. Ongoing engagement.</p></div>
+      </div>
+      <p class="lesson">Lesson kept: operations work is invisible when done well — which is exactly why owners pay to keep it that way.</p>
+    </article>
+
+    <!-- MORE WORK -->
+    <div class="sec-mark rv" style="margin-top:clamp(40px,7vh,70px)"><span class="kick">04b — Also shipped</span><hr class="rule"></div>
+    <div class="more-grid">
+      <div class="mini rv">
+        <span class="kick">2026 · Local service</span>
+        <h3>True Light Pools</h3>
+        <p>Lead-generation site for a pool service company: mobile-first, tap-to-call, quote form, local SEO structure aimed at turning searches into phone calls.</p>
+        <span class="plainlink">truelightpools.com</span>
+      </div>
+      <div class="mini rv">
+        <span class="kick">2026 · Local service</span>
+        <h3>BPS Pools</h3>
+        <p>Second pool-industry build with the same conversion-first playbook — proof the pattern repeats across businesses in the trade.</p>
+        <span class="plainlink">bpspools.net</span>
+      </div>
+      <div class="mini rv">
+        <span class="kick">2026 · Catalog</span>
+        <h3>Lonestar Peptides</h3>
+        <p>Clean, fast product catalog for a research-products vendor, built lean so the owner manages the catalog without help.</p>
+        <span class="plainlink">lonestarpeptides.org</span>
+      </div>
+      <div class="mini rv">
+        <span class="kick">Own product · Architecture</span>
+        <h3>dagm.dev — the engine</h3>
+        <p>My portfolio's custom Git-based CMS: an in-browser admin that authenticates with GitHub OAuth and commits content.json straight to the repo. No database, no CMS fees, every edit versioned. Vanilla JS + GSAP, full JSON-LD SEO, deployed on Vercel.</p>
+        <span class="plainlink">dagm.dev</span>
+      </div>
+      <div class="mini rv">
+        <span class="kick">Practice · Tooling</span>
+        <h3>Custom AI skills</h3>
+        <p>A private toolkit of Claude Code skills I've engineered for my own practice — proposal systems, humanizing editors, deployment and image pipelines. My competitive advantage, written in Markdown.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section id="timeline" aria-label="Timeline">
+    <div class="sec-mark rv"><span class="kick">05 — The road so far</span><hr class="rule"></div>
+    <h2 class="display rv">A short history<br><em>of shipping.</em></h2>
+    <div class="tl" style="margin-top:14px">
+      <div class="tl-item rv">
+        <span class="kick">2022 — 2023</span>
+        <h3>First client work</h3>
+        <p>Started freelancing in the WordPress ecosystem — builds, fixes, migrations. Learned the two lessons that still run the practice: speed sells, and communication is half the job.</p>
+      </div>
+      <div class="tl-item rv">
+        <span class="kick">2024</span>
+        <h3>Rose Bookshop ships</h3>
+        <p>First full e-commerce build with a custom plugin in production. The client relationship that taught me repeat business beats new business.</p>
+      </div>
+      <div class="tl-item rv">
+        <span class="kick">2025</span>
+        <h3>The Arch International & Top Rated standing</h3>
+        <p>Built an organization's entire platform solo, end to end. Earned Top Rated standing on Upwork on the back of consistent five-star delivery.</p>
+      </div>
+      <div class="tl-item rv">
+        <span class="kick">2026</span>
+        <h3>The AI-accelerated practice</h3>
+        <p>Rebuilt my entire workflow around Claude Code and custom-written skills. Multiple concurrent client engagements — two pool companies, a peptides vendor, two art studios, a nonprofit — delivered at a pace that used to require a team.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS ================= -->
+  <section id="process" aria-label="Process">
+    <div class="sec-mark rv"><span class="kick">06 — How an engagement runs</span><hr class="rule"></div>
+    <div class="steps">
+      <div class="step rv"><div><h3>Understand the business first</h3><p>Before any build talk: what does this site have to do for the money? Who lands on it, and what should they do next? Scope gets challenged here if the brief and the goal disagree.</p></div></div>
+      <div class="step rv"><div><h3>Architect before building</h3><p>Sitemap, content structure, and the performance budget — decided up front. The expensive mistakes in web projects are all architectural, and they're all cheapest on day one.</p></div></div>
+      <div class="step rv"><div><h3>Build in daily light</h3><p>Short end-of-day updates: what got done, what's next, what I need. Clients never wonder what's happening — it's the habit my reviews mention most.</p></div></div>
+      <div class="step rv"><div><h3>Ship fast, verify faster</h3><p>Launch includes the checks most builds skip: Core Web Vitals, structured data validation, analytics events firing, forms delivering, every page clicked through on a real phone.</p></div></div>
+      <div class="step rv"><div><h3>Hand the keys back</h3><p>Documentation and a walkthrough so the owner can run their own site. Then I stay available — most engagements on this page never actually ended.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ================= SIGNALS ================= -->
+  <section id="signals" aria-label="Proof">
+    <div class="sec-mark rv"><span class="kick">07 — Signals, not claims</span><hr class="rule"></div>
+    <h2 class="display rv">The evidence.</h2>
+    <div class="signals">
+      <div class="signal rv"><b>Top Rated</b><p>Upwork's badge for sustained client satisfaction and job success — earned, kept, and verifiable on my profile.</p></div>
+      <div class="signal rv"><b>&lt; 3 seconds</b><p>Load-time ceiling on delivered sites. Performance is scoped in at the start, not patched in at the end.</p></div>
+      <div class="signal rv"><b>+40% conversion</b><p>Measured lift on client landing pages rebuilt with conversion-first structure.</p></div>
+      <div class="signal rv"><b>Repeat clients</b><p>Rose Bookshop since 2024, JB Dondolo ongoing, two studios on continuing operations — the strongest review is the client who never leaves.</p></div>
+      <div class="signal rv"><b>Own tooling</b><p>A Git-based CMS, custom plugins, and a private AI skill library — a developer who builds tools, not just pages.</p></div>
+      <div class="signal rv"><b>Business coursework</b><p>Formal grounding in systems and business — see Education below — behind the "business first" instinct.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= TOOLBOX ================= -->
+  <section id="toolbox" aria-label="Toolbox">
+    <div class="sec-mark rv"><span class="kick">08 — The toolbox</span><hr class="rule"></div>
+    <div class="tools-cols">
+      <div class="tool-col rv">
+        <span class="kick">Build</span>
+        <p><b>WordPress</b> — themes, child themes, plugin development, multisite<br><b>Elementor Pro</b> — daily driver<br><b>Builders</b> — Divi, Avada/Fusion, WPBakery, Beaver Builder<br><b>Languages</b> — PHP, HTML5, CSS3, vanilla JavaScript<br><b>Design-to-code</b> — Figma, PSD, XD → WordPress</p>
+      </div>
+      <div class="tool-col rv">
+        <span class="kick">Sell &amp; measure</span>
+        <p><b>WooCommerce</b> — stores, gateways, secure checkout<br><b>Catalog ops</b> — bulk import/export, product data<br><b>Analytics</b> — GA4, Google Search Console<br><b>SEO</b> — on-page, JSON-LD schema, sitemaps<br><b>Performance</b> — Core Web Vitals, caching, WebP</p>
+      </div>
+      <div class="tool-col rv">
+        <span class="kick">Automate &amp; ship</span>
+        <p><b>Git / GitHub</b> — version control, Git-based CMS architecture<br><b>Vercel</b> — deployment<br><b>Claude Code</b> — AI-accelerated development, custom skills<br><b>Hosting</b> — SiteGround, WP Engine, GoDaddy, Bluehost &amp; co.<br><b>Motion</b> — GSAP, ScrollTrigger</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education" aria-label="Education">
+    <div class="sec-mark rv"><span class="kick">09 — Education</span><hr class="rule"></div>
+    <div class="edu rv">
+      <span class="kick">University coursework — business &amp; systems</span>
+      <p>The formal grounding behind the practice: how data should be structured, how systems should be analyzed before they're built, and how businesses actually make decisions. It's why my proposals start with the business problem and my builds start with the sitemap.</p>
+      <div class="edu-list">
+        <span>Database Systems</span>
+        <span>System Analysis &amp; Design</span>
+        <span>Business Research Methods</span>
+        <span>Leadership &amp; Change Management</span>
+        <span>Managerial Economics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OFF THE CLOCK ================= -->
+  <section id="offclock" aria-label="Off the clock">
+    <div class="sec-mark rv"><span class="kick">10 — Off the clock</span><hr class="rule"></div>
+    <h2 class="display rv">Also a person.</h2>
+    <div class="off-grid">
+      <div class="off rv">
+        <h3>Listening</h3>
+        <p>Music runs constantly while I work — the library ranges from Laufey to Bad Bunny, all archived lossless and properly tagged, because caring about details isn't something you switch off.</p>
+        <span class="plainlink">Spotify</span>
+      </div>
+      <div class="off rv">
+        <h3>Watching</h3>
+        <p>Film diary on Letterboxd. Watching how a good film sequences information changed how I sequence landing pages more than any marketing course did.</p>
+        <span class="plainlink">boxd.it/4SQtz</span>
+      </div>
+      <div class="off rv">
+        <h3>Writing</h3>
+        <p>Occasional ideas and essays published on my portfolio's writing section — thoughts on work, habits, and building things.</p>
+        <span class="plainlink">dagm.dev — Ideas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NOW ================= -->
+  <section id="now" aria-label="Current focus">
+    <div class="sec-mark rv"><span class="kick">11 — Now</span><hr class="rule"></div>
+    <h2 class="display rv">Current focus.</h2>
+    <div class="now rv">
+      <p><strong>Deepening the AI-accelerated practice.</strong> Every engagement this year ships faster than the last because the tooling compounds — custom skills for proposals, builds, audits, and deployment that turn solo capacity into small-agency output.</p>
+      <p><strong>Taking on select new clients.</strong> The best fits: businesses that need a site to actually produce — leads, sales, donations — and owners who want a long-term developer, not a one-off gig.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="contact" aria-label="Contact">
+    <div class="sec-mark rv"><span class="kick">12 — The ask</span><hr class="rule"></div>
+    <div class="contact-inner">
+      <h2 class="rv">Have a site that<br>should be <em>working harder?</em></h2>
+      <p class="lede rv">I'm currently available for freelance work. Tell me what the site needs to do for the business, and I'll tell you how I'd build it — usually within the day.</p>
+      <div class="contact-row rv">
+        <span class="big-link solid">Dagmawi.yoseph@icloud.com</span>
+        <span class="big-link line">+251 911 129 513</span>
+      </div>
+      <div class="contact-meta rv">
+        <span>dagm.dev</span>
+        <span>github.com/DAGMAWI-YOSEPH</span>
+        <span>upwork.com/freelancers/~0121bc10815a02f18b</span>
+        <span>Addis Ababa · works worldwide</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Dagmawi Yoseph — A Builder's Record</span>
+    <span>Designed &amp; built by hand, like everything else here <b>✳</b> © <span id="yr">2026</span></span>
+  </footer>
+
+</main>
+
+<script>
+/* Progress hairline */
+(function(){
+  var bar=document.querySelector('.progress');
+  var ticking=false;
+  function update(){
+    var h=document.documentElement;
+    var p=h.scrollTop/(h.scrollHeight-h.clientHeight);
+    bar.style.width=(p*100)+'%';
+    ticking=false;
+  }
+  addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});
+})();
+
+/* Scroll reveal */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+/* Year */
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
