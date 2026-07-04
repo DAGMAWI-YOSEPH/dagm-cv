@@ -7,6 +7,7 @@
 <meta name="description" content="The living CV of Dagmawi Yoseph — Top Rated freelance WordPress & Elementor developer. Case studies, practice notes, and proof of work.">
 <meta name="author" content="Dagmawi Yoseph">
 <meta name="theme-color" content="#f6f3ec">
+<meta name="color-scheme" content="light only">
 <meta property="og:title" content="Dagmawi Yoseph — A Builder's Record">
 <meta property="og:description" content="Part portfolio, part career narrative, part case-study archive.">
 <meta property="og:image" content="https://dagm.dev/img/me.jpg">
@@ -42,7 +43,9 @@
   --gut:clamp(20px,5vw,72px);
 }
 
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+/* background on html (not just body) so iOS full-page screenshots
+   paint the canvas off-white beyond the first viewport, even in dark mode */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--paper);color-scheme:light only}
 body{
   font-family:var(--sans);
   background:var(--paper);
@@ -290,8 +293,34 @@ footer b{color:var(--ember);font-weight:400}
 }
 @media(max-width:719px){
   .hdr-tag{display:none}
-  .plate{max-width:420px}
+  .plate{max-width:420px;margin-inline:auto}
   .hero h1{word-break:keep-all}
+
+  /* header: long brand + email pill can't share a row on a phone */
+  .hdr{flex-wrap:wrap;gap:8px 14px;padding:12px var(--gut)}
+  .brand{font-size:.98rem}
+  .hdr-right{margin-left:auto}
+  .hdr .cta{display:none}
+
+  /* tighter vertical rhythm on small screens */
+  section{padding:56px 0 0}
+  .hero{padding:44px 0 32px}
+  .case{margin-bottom:56px}
+  .tenet,.step{grid-template-columns:44px 1fr;gap:14px;padding:24px 0}
+  .signal,.mini,.off{padding:20px}
+  .lede{font-size:1.05rem}
+}
+@media(max-width:480px){
+  .hero-meta{grid-template-columns:1fr;gap:14px}
+  .hero-sub{margin-bottom:30px}
+  .case-facts{gap:10px 16px}
+  .contact .big-link{width:100%;justify-content:center}
+}
+
+/* touch devices: show everything immediately — snappier on phones and
+   guarantees full-page screenshots never catch unrevealed sections */
+@media (hover:none){
+  .rv{opacity:1;transform:none;transition:none}
 }
 
 /* ==========================================================================
@@ -473,8 +502,8 @@ footer b{color:var(--ember);font-weight:400}
       <div class="screenshot-wrapper">
         <div class="shot-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="shot-url">thearchinternational.com</span></div>
         <div class="shot-frame">
-          <div class="shot-fallback"><b>THE ARCH INTERNATIONAL</b><span>assets/arch.png</span></div>
-          <img src="assets/arch.png" alt="The Arch International website" loading="lazy" onerror="this.remove()">
+          <div class="shot-fallback"><b>THE ARCH INTERNATIONAL</b><span>assets/arch.jpg</span></div>
+          <img src="assets/arch.jpg" alt="The Arch International website" loading="lazy" onerror="this.remove()">
         </div>
       </div>
       <div class="case-story">
@@ -502,8 +531,8 @@ footer b{color:var(--ember);font-weight:400}
       <div class="screenshot-wrapper">
         <div class="shot-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="shot-url">rosebookshop.com</span></div>
         <div class="shot-frame">
-          <div class="shot-fallback"><b>ROSE BOOKSHOP</b><span>assets/rose.png</span></div>
-          <img src="assets/rose.png" alt="Rose Bookshop online store" loading="lazy" onerror="this.remove()">
+          <div class="shot-fallback"><b>ROSE BOOKSHOP</b><span>assets/rose.jpg</span></div>
+          <img src="assets/rose.jpg" alt="Rose Bookshop online store" loading="lazy" onerror="this.remove()">
         </div>
       </div>
       <div class="case-story">
@@ -531,8 +560,8 @@ footer b{color:var(--ember);font-weight:400}
       <div class="screenshot-wrapper">
         <div class="shot-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="shot-url">jbdondolo.org</span></div>
         <div class="shot-frame">
-          <div class="shot-fallback"><b>JB DONDOLO</b><span>assets/jbdondolo.png</span></div>
-          <img src="assets/jbdondolo.png" alt="JB Dondolo nonprofit website" loading="lazy" onerror="this.remove()">
+          <div class="shot-fallback"><b>JB DONDOLO</b><span>assets/jbdondolo.jpg</span></div>
+          <img src="assets/jbdondolo.jpg" alt="JB Dondolo nonprofit website" loading="lazy" onerror="this.remove()">
         </div>
       </div>
       <div class="case-story">
@@ -560,8 +589,8 @@ footer b{color:var(--ember);font-weight:400}
       <div class="screenshot-wrapper">
         <div class="shot-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="shot-url">zen mountain journal — heron dance art studio</span></div>
         <div class="shot-frame">
-          <div class="shot-fallback"><b>ZEN MOUNTAIN JOURNAL</b><span>assets/zen.png</span></div>
-          <img src="assets/zen.png" alt="Zen Mountain Journal website by Heron Dance Art Studio" loading="lazy" onerror="this.remove()">
+          <div class="shot-fallback"><b>ZEN MOUNTAIN JOURNAL</b><span>assets/zen.jpg</span></div>
+          <img src="assets/zen.jpg" alt="Zen Mountain Journal website by Heron Dance Art Studio" loading="lazy" onerror="this.remove()">
         </div>
       </div>
       <div class="case-story">
